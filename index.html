@@ -1,11 +1,357 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2432506794628052" crossorigin="anonymous"></script>
-<meta http-equiv="refresh" content="3;url=https://viniciuspg.github.io/VpGeo/">
-<title>VpGeo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VpGeo - Visualizador Geoespacial do Patrimonio Cultural Brasileiro</title>
+    <meta name="description" content="VpGeo e um aplicativo web gratuito para visualizacao de dados geoespaciais sobre sitios arqueologicos, bens culturais materiais e imateriais do patrimonio cultural brasileiro. Dados do IPHAN.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2432506794628052" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; line-height: 1.7; }
+        a { color: #5a0a0a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .hero { background: linear-gradient(135deg, #5a0a0a, #8b1a1a); color: white; padding: 48px 24px 56px; text-align: center; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); border: 3px solid rgba(255,255,255,0.8); background: white; padding: 4px; }
+        .hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+        .hero .subtitle { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto 16px; }
+        .hero .desc { font-size: 14px; opacity: 0.8; max-width: 700px; margin: 0 auto 28px; }
+        .hero .badges { display: flex; gap: 8px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .hero .badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+        .badge-free { background: #4caf50; color: white; }
+        .badge-open { background: #2196f3; color: white; }
+        .badge-pwa { background: #ff9800; color: white; }
+        .hero .cta { display: inline-block; background: white; color: #5a0a0a; padding: 12px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none; margin: 8px; transition: all 0.3s; }
+        .hero .cta:hover { background: #f0f0f0; text-decoration: none; }
+        .hero .cta-secondary { background: transparent; color: white; border: 2px solid white; }
+        .hero .cta-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        .section { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+        .section h2 { color: #5a0a0a; font-size: 26px; margin-bottom: 16px; border-bottom: 3px solid #5a0a0a; padding-bottom: 8px; }
+        .section h3 { color: #8b1a1a; font-size: 18px; margin-top: 20px; margin-bottom: 8px; }
+        .section p { margin-bottom: 12px; font-size: 15px; }
+        .section ul { padding-left: 24px; margin-bottom: 16px; }
+        .section li { margin-bottom: 6px; font-size: 15px; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+        .feature-card { background: #fef3f3; border-left: 4px solid #5a0a0a; padding: 16px 20px; border-radius: 6px; }
+        .feature-card h4 { color: #5a0a0a; font-size: 15px; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; margin: 0; color: #555; }
+
+        .steps { counter-reset: step; margin-top: 16px; }
+        .step { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+        .step::before { counter-increment: step; content: counter(step); flex-shrink: 0; width: 36px; height: 36px; background: #5a0a0a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
+        .step-content { flex: 1; }
+        .step-content strong { display: block; color: #5a0a0a; margin-bottom: 2px; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+        .data-table th { background: #5a0a0a; color: white; padding: 10px 12px; text-align: left; }
+        .data-table td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+        .data-table tr:nth-child(even) { background: #f9f9f9; }
+
+        .highlight-box { background: #fef3f3; border-left: 4px solid #5a0a0a; padding: 16px 20px; margin: 20px 0; border-radius: 6px; }
+
+        .pro-section { background: linear-gradient(135deg, #1a237e, #283593); color: white; }
+        .pro-section h2 { color: white; border-bottom-color: rgba(255,255,255,0.3); }
+        .pro-section h3 { color: #90caf9; }
+        .pro-section p { color: rgba(255,255,255,0.9); }
+        .pro-section li { color: rgba(255,255,255,0.85); }
+        .pro-badge { display: inline-block; background: #ff9800; color: white; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-bottom: 16px; }
+        .pro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+        .pro-card { background: rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); }
+        .pro-card .emoji { font-size: 24px; margin-bottom: 6px; }
+        .pro-card h4 { color: #90caf9; font-size: 14px; margin-bottom: 4px; }
+        .pro-card p { font-size: 12px; color: rgba(255,255,255,0.7); margin: 0; }
+
+        .links-section { background: #f5f5f5; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+        .link-card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .link-card .emoji { font-size: 32px; margin-bottom: 8px; }
+        .link-card h4 { color: #5a0a0a; margin-bottom: 4px; }
+        .link-card a { display: inline-block; margin-top: 8px; background: #5a0a0a; color: white; padding: 6px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; }
+        .link-card a:hover { background: #8b1a1a; text-decoration: none; }
+
+        .ad-notice { background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px 20px; margin: 20px 0; border-radius: 6px; font-size: 13px; color: #555; }
+        .ad-notice strong { color: #e65100; }
+
+        .footer { background: linear-gradient(135deg, #5a0a0a, #8b1a1a); color: white; padding: 24px; text-align: center; font-size: 12px; }
+        .footer a { color: #ffcdd2; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 24px; }
+            .hero .subtitle { font-size: 15px; }
+            .hero-icon { width: 80px; height: 80px; }
+            .section h2 { font-size: 22px; }
+            .features-grid, .pro-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-<p>Redirecionando para o VpGeo...</p>
+
+    <div class="hero">
+        <img src="https://viniciuspg.github.io/VpGeo/icon-512.png" alt="VpGeo" class="hero-icon">
+        <h1>VpGeo</h1>
+        <p class="subtitle">Visualizador Geoespacial do Patrimonio Cultural Brasileiro</p>
+        <div class="badges">
+            <span class="badge badge-free">GRATUITO</span>
+            <span class="badge badge-open">CODIGO ABERTO</span>
+            <span class="badge badge-pwa">PWA INSTALAVEL</span>
+        </div>
+        <p class="desc">Explore sitios arqueologicos, bens culturais materiais e imateriais de todo o Brasil em um mapa interativo, com dados oficiais do IPHAN.</p>
+        <a href="https://viniciuspg.github.io/VpGeo/" class="cta">Acessar o VpGeo</a>
+        <a href="https://github.com/viniciuspg/VpGeo" class="cta cta-secondary">Ver no GitHub</a>
+    </div>
+
+    <div class="section">
+        <h2>O que e o VpGeo?</h2>
+        <p>O <strong>VpGeo</strong> (Visualizador de Patrimonio Geoespacial) e um aplicativo web progressivo (PWA) gratuito e de codigo aberto, criado para facilitar a visualizacao e consulta de dados geoespaciais relacionados ao <strong>patrimonio cultural brasileiro</strong>.</p>
+        <p>Desenvolvido com tecnologia <strong>Leaflet.js</strong>, o VpGeo consome diretamente os servicos <strong>WMS (Web Map Service)</strong> do <strong>GeoServer do IPHAN</strong> (Instituto do Patrimonio Historico e Artistico Nacional), permitindo que pesquisadores, estudantes, profissionais da area cultural e qualquer cidadao interessado possa explorar de forma visual e interativa as informacoes sobre o patrimonio cultural do Brasil.</p>
+        <p>O aplicativo funciona inteiramente no navegador, sem necessidade de instalacao de software adicional, e pode ser instalado como app nativo no celular Android ou iOS atraves da tecnologia PWA.</p>
+
+        <div class="ad-notice">
+            <strong>Sobre anuncios:</strong> O VpGeo e gratuito e pode conter anuncios publicitarios para subsidiar os custos de desenvolvimento e manutencao do aplicativo. Agradecemos sua compreensao e apoio!
+        </div>
+
+        <h3>Para quem e o VpGeo?</h3>
+        <ul>
+            <li><strong>Arqueologos e pesquisadores</strong> que precisam consultar a localizacao de sitios arqueologicos cadastrados no SICG/IPHAN</li>
+            <li><strong>Profissionais do patrimonio cultural</strong> que trabalham com bens materiais e imateriais tombados ou inventariados</li>
+            <li><strong>Estudantes de arqueologia, historia, geografia e areas afins</strong> que necessitam de dados geoespaciais para suas pesquisas</li>
+            <li><strong>Gestores publicos</strong> que atuam em licenciamento ambiental e precisam verificar a presenca de sitios arqueologicos em areas de empreendimentos</li>
+            <li><strong>Fiscais do IPHAN</strong> que realizam atividades de campo e necessitam de uma ferramenta de consulta rapida e portatil</li>
+            <li><strong>Cidadaos interessados</strong> em conhecer o patrimonio cultural da sua regiao</li>
+        </ul>
+    </div>
+
+    <div class="section" style="background:#f5f5f5;">
+        <h2>Funcionalidades</h2>
+        <p>O VpGeo oferece um conjunto completo de ferramentas para visualizacao e consulta geoespacial do patrimonio cultural brasileiro:</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>14 Camadas WMS</h4>
+                <p>Sitios arqueologicos (pontos e poligonos), bens materiais, bens imateriais, acoes de salvaguarda, hidrografia, empreendimentos e mais.</p>
+            </div>
+            <div class="feature-card">
+                <h4>4 Mapas Base</h4>
+                <p>Satelite (Esri), OpenStreetMap, Topografico (Esri) e Ruas (Esri), com rotulos opcionais para melhor orientacao.</p>
+            </div>
+            <div class="feature-card">
+                <h4>GPS com Bussola</h4>
+                <p>Localize-se no mapa em tempo real com precisao GPS e seta direcional (bussola) que indica a direcao do seu deslocamento.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Consulta de Feicoes (GetFeatureInfo)</h4>
+                <p>Clique em qualquer ponto do mapa para consultar informacoes detalhadas sobre sitios arqueologicos, bens culturais e empreendimentos.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Legenda Interativa</h4>
+                <p>Visualize a simbologia de cada camada WMS ativa com legendas dinamicas geradas diretamente pelo GeoServer do IPHAN.</p>
+            </div>
+            <div class="feature-card">
+                <h4>PWA Instalavel</h4>
+                <p>Instale o VpGeo como um aplicativo nativo no seu celular ou computador, com icone na tela inicial e tela cheia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Como usar o VpGeo</h2>
+        <p>Utilizar o VpGeo e simples e rapido. Siga os passos abaixo para comecar a explorar o patrimonio cultural brasileiro:</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-content">
+                    <strong>Acesse o aplicativo</strong>
+                    Abra o navegador e va para <a href="https://viniciuspg.github.io/VpGeo/">viniciuspg.github.io/VpGeo</a>. Funciona em qualquer dispositivo com acesso a internet.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-content">
+                    <strong>Escolha as camadas</strong>
+                    Clique no icone de camadas (canto superior direito) para selecionar quais informacoes deseja visualizar no mapa: sitios arqueologicos, bens materiais, empreendimentos, hidrografia e mais.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-content">
+                    <strong>Navegue pelo mapa</strong>
+                    Use os gestos de toque (celular) ou mouse (desktop) para navegar. Use os botoes FLN (Florianopolis) e BR (Brasil) para zoom rapido.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-content">
+                    <strong>Consulte informacoes</strong>
+                    Clique em qualquer ponto do mapa para abrir a consulta de feicoes (GetFeatureInfo). Dois botoes permitem consultar dados do SICG e do DBGEO separadamente.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-content">
+                    <strong>Ative o GPS</strong>
+                    Clique no botao GPS para ver sua posicao em tempo real no mapa, com bussola direcional e circulo de precisao.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-content">
+                    <strong>Instale como app</strong>
+                    No Chrome do celular, toque nos tres pontinhos e selecione "Instalar app" para ter o VpGeo como aplicativo na sua tela inicial.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background:#f5f5f5;">
+        <h2>Fontes de Dados</h2>
+        <p>Todos os dados exibidos no VpGeo sao provenientes de fontes publicas oficiais. O aplicativo nao armazena nem modifica os dados originais, apenas os visualiza em tempo real atraves de servicos WMS.</p>
+
+        <h3>Camadas WMS disponiveis</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Camada</th><th>Workspace</th><th>Descricao</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Sitios Arqueologicos (pontos)</td><td>SICG</td><td>Localizacao pontual dos sitios arqueologicos cadastrados</td></tr>
+                <tr><td>Sitios Arqueologicos (poligonos)</td><td>SICG</td><td>Delimitacao poligonal dos sitios arqueologicos</td></tr>
+                <tr><td>Bens Materiais</td><td>SICG</td><td>Bens culturais materiais classificados por tipo</td></tr>
+                <tr><td>Bens Materiais (poligonos)</td><td>SICG</td><td>Delimitacao poligonal dos bens materiais</td></tr>
+                <tr><td>Protecao</td><td>SICG</td><td>Bens com algum tipo de protecao legal aplicada</td></tr>
+                <tr><td>Acoes de Salvaguarda</td><td>SICG</td><td>Acoes de preservacao e salvaguarda registradas</td></tr>
+                <tr><td>Bens Imateriais</td><td>SICG</td><td>Patrimonio cultural imaterial registrado</td></tr>
+                <tr><td>Contexto Imediato</td><td>SICG</td><td>Area de entorno dos bens culturais</td></tr>
+                <tr><td>Municipios</td><td>SICG</td><td>Limites municipais com dados do SICG</td></tr>
+                <tr><td>Pre Setor</td><td>SICG</td><td>Setores de planejamento</td></tr>
+                <tr><td>Hidrografia</td><td>SICG</td><td>Rede hidrografica associada aos bens culturais</td></tr>
+                <tr><td>Mapa Nimuendaju 1981</td><td>SICG</td><td>Mapa etno-historico de Curt Nimuendaju (IBGE, 1981)</td></tr>
+                <tr><td>Mapa Nimuendaju 2017</td><td>SICG</td><td>Mapa etno-historico atualizado (IPHAN, 2017)</td></tr>
+                <tr><td>Empreendimentos (FCA)</td><td>DBGEO</td><td>Empreendimentos com Ficha de Caracterizacao da Atividade</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Mapas base e dados topograficos</h3>
+        <ul>
+            <li><strong>Esri World Imagery</strong> &mdash; Imagens de satelite de alta resolucao</li>
+            <li><strong>OpenStreetMap</strong> &mdash; Mapa colaborativo de ruas e referencias</li>
+            <li><strong>Esri World Topo Map</strong> &mdash; Mapa topografico global</li>
+            <li><strong>Esri World Street Map</strong> &mdash; Mapa de ruas detalhado</li>
+            <li><strong>GMRT (Global Multi-Resolution Topography)</strong> &mdash; Dados topograficos e batimetricos de alta resolucao da Columbia University/LDEO (CC BY 4.0)</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Fontes oficiais:</strong> Camadas WMS fornecidas pelo GeoServer do IPHAN (<code>portal.iphan.gov.br/geoserver</code>). Dados topograficos GMRT fornecidos pelo Lamont-Doherty Earth Observatory, Columbia University. O VpGeo utiliza um proxy HTTPS (Cloudflare Workers) para garantir a seguranca da conexao.<br><br>
+            <strong>Citacao GMRT:</strong> <em>Ryan, W.B.F. et al. (2009), Global Multi-Resolution Topography (GMRT) synthesis, Geochem. Geophys. Geosyst., 10, Q03014, doi:10.1029/2008GC002332.</em>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Tecnologias Utilizadas</h2>
+        <p>O VpGeo foi desenvolvido com tecnologias web modernas, todas de codigo aberto ou com licencas permissivas:</p>
+        <ul>
+            <li><strong>Leaflet.js</strong> &mdash; Biblioteca JavaScript para mapas interativos (BSD 2-Clause)</li>
+            <li><strong>WMS (Web Map Service)</strong> &mdash; Protocolo OGC para consumo de camadas geoespaciais</li>
+            <li><strong>Progressive Web App (PWA)</strong> &mdash; Tecnologia que permite instalar o app no celular</li>
+            <li><strong>Cloudflare Workers</strong> &mdash; Proxy HTTPS para acesso seguro ao GeoServer</li>
+            <li><strong>GitHub Pages</strong> &mdash; Hospedagem gratuita e confiavel</li>
+            <li><strong>Esri ArcGIS / OpenStreetMap / GMRT</strong> &mdash; Mapas base e dados topograficos</li>
+        </ul>
+
+        <h3>Arquitetura simplificada</h3>
+        <p>O VpGeo e uma aplicacao front-end pura (HTML + CSS + JavaScript) que consome servicos WMS em tempo real. Nao possui backend proprio, banco de dados ou servidor dedicado. Toda a logica de visualizacao e processada diretamente no navegador do usuario, garantindo rapidez e privacidade.</p>
+    </div>
+
+    <div class="section pro-section">
+        <span class="pro-badge">EM DESENVOLVIMENTO</span>
+        <h2>VpGeo Pro &mdash; Em breve</h2>
+        <p>Estamos desenvolvendo uma versao avancada do VpGeo, com funcionalidades especificas para <strong>trabalho de campo</strong>, pensada para fiscais do IPHAN, arqueologos e profissionais do patrimonio cultural.</p>
+        <div class="pro-grid">
+            <div class="pro-card">
+                <div class="emoji">&#128206;</div>
+                <h4>Importar KML/KMZ</h4>
+                <p>Carregue camadas vetoriais de pontos e poligonos diretamente no mapa.</p>
+            </div>
+            <div class="pro-card">
+                <div class="emoji">&#127919;</div>
+                <h4>Navegacao ate o alvo</h4>
+                <p>Trace uma rota em linha reta da sua posicao ate a feicao desejada.</p>
+            </div>
+            <div class="pro-card">
+                <div class="emoji">&#128205;</div>
+                <h4>Waypoints e Tracks</h4>
+                <p>Marque pontos de interesse e grave percursos GPS durante o campo.</p>
+            </div>
+            <div class="pro-card">
+                <div class="emoji">&#128247;</div>
+                <h4>Fotos georreferenciadas</h4>
+                <p>Registre fotos com coordenadas, data e hora automaticamente.</p>
+            </div>
+            <div class="pro-card">
+                <div class="emoji">&#128268;</div>
+                <h4>Modo offline</h4>
+                <p>Baixe uma area previamente e trabalhe sem internet em campo.</p>
+            </div>
+            <div class="pro-card">
+                <div class="emoji">&#127775;</div>
+                <h4>Sem anuncios</h4>
+                <p>Experiencia limpa e focada no trabalho tecnico de campo.</p>
+            </div>
+        </div>
+        <p style="margin-top:20px; font-size:13px; opacity:0.7; text-align:center;">Quer ser notificado quando o VpGeo Pro estiver disponivel? Envie um email para <a href="mailto:viniciuspg@gmail.com" style="color:#90caf9;">viniciuspg@gmail.com</a></p>
+    </div>
+
+    <div class="section links-section" style="background:#f5f5f5;">
+        <h2>Acesse o VpGeo</h2>
+        <div class="links-grid">
+            <div class="link-card">
+                <div class="emoji">&#127758;</div>
+                <h4>Abrir o App</h4>
+                <p style="font-size:12px;color:#666;">Versao completa online</p>
+                <a href="https://viniciuspg.github.io/VpGeo/">Acessar</a>
+            </div>
+            <div class="link-card">
+                <div class="emoji">&#128187;</div>
+                <h4>Codigo Fonte</h4>
+                <p style="font-size:12px;color:#666;">Repositorio no GitHub</p>
+                <a href="https://github.com/viniciuspg/VpGeo">Ver codigo</a>
+            </div>
+            <div class="link-card">
+                <div class="emoji">&#128274;</div>
+                <h4>Privacidade</h4>
+                <p style="font-size:12px;color:#666;">Politica de privacidade</p>
+                <a href="https://viniciuspg.github.io/VpGeo/privacy.html">Ler politica</a>
+            </div>
+            <div class="link-card">
+                <div class="emoji">&#128231;</div>
+                <h4>Contato</h4>
+                <p style="font-size:12px;color:#666;">Duvidas ou sugestoes</p>
+                <a href="mailto:viniciuspg@gmail.com">Enviar email</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Perguntas Frequentes</h2>
+
+        <h3>O VpGeo e gratuito?</h3>
+        <p>Sim, o VpGeo e completamente gratuito e de codigo aberto. O aplicativo pode conter anuncios publicitarios para subsidiar os custos de desenvolvimento e manutencao. Uma versao Pro, sem anuncios e com funcionalidades avancadas para trabalho de campo, esta em desenvolvimento.</p>
+
+        <h3>Preciso instalar algum software?</h3>
+        <p>Nao. O VpGeo funciona diretamente no navegador web (Chrome, Firefox, Safari, Edge). Voce tambem pode instala-lo como app no celular atraves da funcionalidade PWA, sem precisar baixar de uma loja de aplicativos.</p>
+
+        <h3>Os dados sao confiaveis?</h3>
+        <p>Sim. Todos os dados exibidos no VpGeo sao provenientes do GeoServer oficial do IPHAN, orgao vinculado ao Ministerio da Cultura do Governo Federal do Brasil. Os dados topograficos GMRT sao mantidos pelo Lamont-Doherty Earth Observatory da Columbia University. O VpGeo apenas visualiza esses dados em tempo real, sem armazena-los ou modifica-los.</p>
+
+        <h3>O VpGeo funciona offline?</h3>
+        <p>Parcialmente. A interface do app pode ser carregada offline (por ser uma PWA com Service Worker), mas as camadas WMS necessitam de conexao com a internet para serem carregadas, pois sao consumidas em tempo real do servidor do IPHAN. A futura versao Pro incluira modo offline completo para areas pre-definidas.</p>
+
+        <h3>Posso usar o VpGeo na minha pesquisa academica?</h3>
+        <p>Sim! O VpGeo e uma ferramenta de consulta visual que pode complementar pesquisas academicas em arqueologia, patrimonio cultural, geografia e areas afins. Recomendamos sempre citar a fonte original dos dados (IPHAN/SICG).</p>
+
+        <h3>Como posso contribuir com o projeto?</h3>
+        <p>O codigo-fonte do VpGeo esta disponivel no <a href="https://github.com/viniciuspg/VpGeo">GitHub</a>. Voce pode abrir issues, sugerir melhorias ou enviar pull requests. Toda contribuicao e bem-vinda!</p>
+    </div>
+
+    <div class="footer">
+        <p><strong>VpGeo</strong> &mdash; Visualizador Geoespacial do Patrimonio Cultural Brasileiro</p>
+        <p style="margin-top:6px;">Desenvolvido com dados publicos do <a href="http://portal.iphan.gov.br" target="_blank">IPHAN</a> e <a href="https://www.gmrt.org" target="_blank">GMRT/LDEO</a> | <a href="https://viniciuspg.github.io/VpGeo/privacy.html">Politica de Privacidade</a> | <a href="https://github.com/viniciuspg/VpGeo">GitHub</a></p>
+        <p style="margin-top:6px; opacity:0.7;">&copy; 2026 Equipe VpGeo &mdash; Florianopolis, SC, Brasil</p>
+    </div>
+
 </body>
 </html>
