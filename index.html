@@ -121,9 +121,37 @@
 }
 
 @media (max-width: 480px) {
-    .pro-grid,
-    .links-grid {
+    .pro-grid {
         grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .link-card {
+        padding: 12px 8px;
+    }
+
+    .link-card .emoji {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .link-card h4 {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .link-card p {
+        font-size: 10px !important;
+        margin-bottom: 4px;
+    }
+
+    .link-card a {
+        padding: 5px 10px;
+        font-size: 11px;
     }
 }
     </style>
