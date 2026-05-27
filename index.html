@@ -78,13 +78,54 @@
         .footer { background: linear-gradient(135deg, #5a0a0a, #8b1a1a); color: white; padding: 24px; text-align: center; font-size: 12px; }
         .footer a { color: #ffcdd2; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 24px; }
-            .hero .subtitle { font-size: 15px; }
-            .hero-icon { width: 80px; height: 80px; }
-            .section h2 { font-size: 22px; }
-            .features-grid, .pro-grid { grid-templaté-columns: 1fr; }
-        }
+@media (max-width: 768px) {
+    .hero h1 { font-size: 24px; }
+    .hero .subtitle { font-size: 15px; }
+    .hero-icon { width: 80px; height: 80px; }
+    .section h2 { font-size: 22px; }
+
+    /* Funcionalidades: mantém 1 coluna no mobile */
+    .features-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    /* VpGeo Pro: mantém quadro mais compacto em 2 colunas */
+    .pro-grid { 
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
+        gap: 10px;
+    }
+
+    .pro-card {
+        padding: 12px;
+    }
+
+    .pro-card .emoji {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .pro-card h4 {
+        font-size: 12px;
+    }
+
+    .pro-card p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Links finais também ficam mais compactos */
+    .links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pro-grid,
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
