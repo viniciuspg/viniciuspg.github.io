@@ -1,8 +1,8 @@
 [{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "io.github.viniciuspg.twa",
-        "sha256_cert_fingerprints": ["D5:F6:7B:30:76:A2:69:47:81:CF:F2:68:95:C0:37:22:DD:9D:F3:0A:32:21:B3:99:01:BF:52:FF:20:FC:42:DF"]
-      }
-    }]
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.github.viniciuspg.twa",
+    "sha256_cert_fingerprints": ["EA:90:BF:3B:71:5C:1B:61:DE:DF:81:9F:C4:B9:7A:3E:E0:ED:64:56:CE:02:2E:F2:90:96:53:27:5A:C0:FD:9D"]
+  }
+}]
