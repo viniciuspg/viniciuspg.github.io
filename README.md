@@ -1,4 +1,7 @@
-https://zenodo.org/badge/1245262905.svg](https://doi.org/10.5281/zenodo.21135445)
-https://img.shields.io/badge/GitHub%20Pages-VpGeo-brightgreen](https://viniciuspg.github.io/VpGeo/)
-https://img.shields.io/badge/License-MIT-yellow.svg](https://opensource.org/licenses/MIT)
 # viniciuspg.github.io
+
+Landing page do projeto **VpGeo** — Visualizador Geoespacial do Patrimônio Cultural Brasileiro.
+
+🌐 Acesse: [https://viniciuspg.github.io/](https://viniciuspg.github.io/)  
+📱 App: [https://viniciuspg.github.io/VpGeo/](https://viniciuspg.github.io/VpGeo/)  
+💻 Código do app: [github.com/viniciuspg/VpGeo](https://github.com/viniciuspg/VpGeo)
