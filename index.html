@@ -73,7 +73,7 @@
         .pro-card p { font-size: 12px; color: rgba(255,255,255,0.7); margin: 0; }
 
         .links-section { background: #f5f5f5; }
-        .links-grid { display: grid; grid-templaté-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
         .link-card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .link-card .emoji { font-size: 32px; margin-bottom: 8px; }
         .link-card h4 { color: #5a0a0a; margin-bottom: 4px; }
@@ -231,7 +231,40 @@
             </div>
         </div>
     </div>
+    <div class="section" style="background:#fef8f8;">
+        <h2>🆕 Últimas atualizações — Versão 1.5</h2>
+        <p>O VpGeo evolui continuamente com base no uso real de arqueólogos, gestores e pesquisadores. Confira as novidades mais recentes:</p>
 
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>🔍 Busca unificada</h4>
+                <p>Um único campo para pesquisar sítios arqueológicos, bens materiais, empreendimentos FCA, endereços e coordenadas. Suporta código IPHAN com ou sem hífens (ex: SC-4218400-BA-ST-00003).</p>
+            </div>
+            <div class="feature-card">
+                <h4>🏗️ Empreendimentos FCA</h4>
+                <p>Pesquise empreendimentos submetidos à Ficha de Caracterização da Atividade (FCA) por nome, razão social, ID ou número do processo SEI.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🧭 GPS acompanha você</h4>
+                <p>O mapa passa a acompanhar automaticamente sua posição em tempo real, ideal para trabalho de campo ou uso no carro. Basta arrastar o mapa para pausar temporariamente.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🎯 Bússola aprimorada</h4>
+                <p>A seta direcional foi corrigida para funcionar corretamente em qualquer orientação do celular (retrato ou paisagem).</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:24px;">
+            <strong>📊 Cobertura atual:</strong>
+            <table style="width:100%;font-size:14px;color:#333;border-collapse:collapse;margin-top:8px;">
+                <tr><td style="padding:4px 0;">⛏️ Sítios arqueológicos</td><td style="text-align:right;font-weight:600;">~46 mil registros</td></tr>
+                <tr><td style="padding:4px 0;">🏛️ Bens materiais</td><td style="text-align:right;font-weight:600;">~67 mil registros</td></tr>
+                <tr><td style="padding:4px 0;">🏗️ Empreendimentos FCA</td><td style="text-align:right;font-weight:600;">~28 mil registros</td></tr>
+                <tr><td style="padding:4px 0;">🎭 Bens imateriais (BCR)</td><td style="text-align:right;font-weight:600;">67 registros</td></tr>
+            </table>
+        </div>
+    </div>
+``
     <div class="section">
         <h2>Como usar o VpGeo</h2>
         <p>Utilizar o VpGeo e simples e rápido. Siga os passos abaixo para começar a explorar o patrimônio cultural brasileiro:</p>
@@ -396,7 +429,93 @@
             </div>
         </div>
     </div>
+    <div class="section" style="background:#f5f5f5;">
+        <h2>📚 Como citar o VpGeo</h2>
+        <p>Se o VpGeo for útil em pesquisas, relatórios técnicos, TCCs, dissertações, teses ou publicações acadêmicas, por favor considere citá-lo em um dos formatos abaixo. A citação ajuda a dar visibilidade e credibilidade ao projeto.</p>
 
+        <!-- APA -->
+        <div style="background:white;border:1px solid #ddd;border-left:4px solid #5a0a0a;border-radius:6px;padding:14px 18px;margin:14px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="color:#5a0a0a;font-size:13px;">📖 APA (7ª edição)</strong>
+                <button onclick="copyCitation('cite-apa')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
+            </div>
+            <p id="cite-apa" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
+                Gonçalves, V. P. (2026). <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em> (Versão 1.5) [Software]. https://viniciuspg.github.io/VpGeo/
+            </p>
+        </div>
+
+        <!-- MLA -->
+        <div style="background:white;border:1px solid #ddd;border-left:4px solid #5a0a0a;border-radius:6px;padding:14px 18px;margin:14px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="color:#5a0a0a;font-size:13px;">📖 MLA (9ª edição)</strong>
+                <button onclick="copyCitation('cite-mla')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
+            </div>
+            <p id="cite-mla" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
+                Gonçalves, Vinicius Paiva. <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em>. Versão 1.5, 2026, viniciuspg.github.io/VpGeo/.
+            </p>
+        </div>
+
+        <!-- Chicago -->
+        <div style="background:white;border:1px solid #ddd;border-left:4px solid #5a0a0a;border-radius:6px;padding:14px 18px;margin:14px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="color:#5a0a0a;font-size:13px;">📖 Chicago (17ª edição)</strong>
+                <button onclick="copyCitation('cite-chicago')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
+            </div>
+            <p id="cite-chicago" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
+                Gonçalves, Vinicius Paiva. 2026. "VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro." Versão 1.5. https://viniciuspg.github.io/VpGeo/.
+            </p>
+        </div>
+
+        <!-- ABNT -->
+        <div style="background:white;border:1px solid #ddd;border-left:4px solid #4caf50;border-radius:6px;padding:14px 18px;margin:14px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="color:#2e7d32;font-size:13px;">🇧🇷 ABNT NBR 6023:2018</strong>
+                <button onclick="copyCitation('cite-abnt')" style="background:#2e7d32;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
+            </div>
+            <p id="cite-abnt" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
+                GONÇALVES, Vinicius Paiva. <strong>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</strong>. Versão 1.5. Florianópolis, 2026. Disponível em: https://viniciuspg.github.io/VpGeo/. Acesso em: [data de acesso].
+            </p>
+        </div>
+
+        <!-- BibTeX -->
+        <div style="background:#2b2b2b;border:1px solid #444;border-radius:6px;padding:14px 18px;margin:14px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="color:#90caf9;font-size:13px;">💻 BibTeX (LaTeX)</strong>
+                <button onclick="copyCitation('cite-bibtex')" style="background:#1565c0;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
+            </div>
+            <pre id="cite-bibtex" style="margin:0;font-size:12px;color:#e0e0e0;font-family:Consolas,'Courier New',monospace;line-height:1.5;white-space:pre-wrap;background:transparent;">@software{goncalves2026vpgeo,
+  author  = {Gonçalves, Vinicius Paiva},
+  title   = {{VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro}},
+  version = {1.5},
+  year    = {2026},
+  url     = {https://viniciuspg.github.io/VpGeo/}
+}</pre>
+        </div>
+
+        <div class="ad-notice" style="background:#e3f2fd;border-left-color:#1565c0;">
+            <strong style="color:#0d47a1;">💡 Sobre o DOI:</strong> Um identificador DOI permanente para o VpGeo está sendo registrado via Zenodo (CERN). Assim que disponível, será incluído em todas as citações acima para garantir referência permanente em publicações acadêmicas.
+        </div>
+    </div>
+
+    <script>
+        function copyCitation(id) {
+            var el = document.getElementById(id);
+            var text = (el.textContent || el.innerText).trim();
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = event.target;
+                var originalText = btn.textContent;
+                var originalBg = btn.style.background;
+                btn.textContent = '✓ Copiado!';
+                btn.style.background = '#4caf50';
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.background = originalBg;
+                }, 1500);
+            }).catch(function() {
+                alert('Não foi possível copiar. Selecione o texto manualmente.');
+            });
+        }
+    </script>
     <div class="section">
         <h2>Perguntas Frequentes</h2>
 
