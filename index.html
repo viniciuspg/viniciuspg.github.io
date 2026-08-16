@@ -12,7 +12,7 @@
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VpGeo - Visualizador Geoespacial do Patrimônio Cultural Brasileiro</title>
-    <meta name="description" content="VpGeo é um aplicativo web gratuito para visualização de dados geoespaciais sobre sítios arqueológicos, bens culturais matériais e imatériais do patrimônio cultural brasileiro. Dados do IPHAN.">
+    <meta name="description" content="VpGeo é um aplicativo web gratuito para visualização e consulta de sítios arqueológicos, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, com dados oficiais do IPHAN.">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2432506794628052" crossorigin="anonymous"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -180,7 +180,7 @@
                 <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21135445.svg" alt="DOI" style="height:24px;vertical-align:middle;">
             </a>
         </div>
-        <p class="desc">Explore sítios arqueológicos, bens culturais matériais e imatériais de todo o Brasil em um mapa interativo, com dados oficiais do IPHAN.</p>
+        <p class="desc">Explore sítios arqueológicos, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, em um mapa interativo com dados oficiais do IPHAN.</p>
         <a href="https://viniciuspg.github.io/VpGeo/" class="cta">Acessar o VpGeo</a>
         <a href="https://github.com/viniciuspg/VpGeo" class="cta cta-secondary">Ver no GitHub</a>
     </div>
@@ -198,7 +198,7 @@
         <h3>Para quem e o VpGeo?</h3>
         <ul>
             <li><strong>Arqueólogos e pesquisadores</strong> que precisam consultar a localização de sítios arqueológicos cadastrados no SICG/IPHAN</li>
-            <li><strong>Profissionais do patrimônio cultural</strong> que trabalham com bens matériais e imatériais tombados ou inventariados</li>
+            <li><strong>Profissionais do patrimônio cultural</strong> que trabalham com bens materiais e imateriais tombados ou inventariados</li>
             <li><strong>Estudantes de arqueologia, história, geografia e áreas afins</strong> que necessitam de dados geoespaciais para suas pesquisas</li>
             <li><strong>Gestores públicos</strong> que atuam em licenciamento ambiental e precisam verificar a presença de sítios arqueológicos em áreas de empreendimentos</li>
             <li><strong>Fiscais do IPHAN</strong> que realizam atividades de campo e necessitam de uma ferramenta de consulta rápida e portátil</li>
@@ -211,8 +211,8 @@
         <p>O VpGeo oferece um conjunto completo de ferramentas para visualização e consulta geoespacial do patrimônio cultural brasileiro:</p>
         <div class="features-grid">
             <div class="feature-card">
-                <h4>9 Camadas WMS + Bens Imatériais (BCR)</h4>
-                <p>Sítios arqueológicos (pontos e polígonos), bens matériais, bens imatériais, ações de salvaguarda, hidrografia, empreendimentos e mais.</p>
+                <h4>11 Camadas WMS + Bens Imateriais (BCR)</h4>
+                <p>Sítios arqueológicos (pontos e polígonos), bens materiais, bens imateriais, hidrografia, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
             </div>
             <div class="feature-card">
                 <h4>5 Mapas Base</h4>
@@ -224,7 +224,7 @@
             </div>
             <div class="feature-card">
                 <h4>Consulta de Feições (GetFeatureInfo)</h4>
-                <p>Clique em qualquer ponto do mapa para consultar informações detalhadas sobre sítios arqueológicos, bens culturais e empreendimentos.</p>
+                <p>Clique em qualquer ponto do mapa para consultar informações detalhadas sobre sítios arqueológicos, bens culturais, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
             </div>
             <div class="feature-card">
                 <h4>Legenda Interativa</h4>
@@ -237,23 +237,31 @@
         </div>
     </div>
     <div class="section" style="background:#fef8f8;">
-        <h2>🆕 Últimas atualizações — Versão 1.5</h2>
+        <h2>🆕 Últimas atualizações — Versão 1.6</h2>
         <p>O VpGeo evolui continuamente com base no uso real de arqueólogos, gestores e pesquisadores. Confira as novidades mais recentes:</p>
 
         <div class="features-grid">
             <div class="feature-card">
                 <h4>🔍 Busca unificada</h4>
-                <p>Um único campo para pesquisar sítios arqueológicos, bens materiais, empreendimentos FCA, endereços e coordenadas. Suporta código IPHAN com ou sem hífens (ex: SC-4218400-BA-ST-00003).</p>
+                <p>Um único campo para pesquisar sítios arqueológicos, bens materiais, empreendimentos FCA e SAIP, endereços e coordenadas. A busca aceita nome do empreendimento, ID SAIP, processo SEI, tipo, município e código IPHAN com ou sem hífens.</p>
             </div>
-            <div class="feature-card">
-                <h4>🏗️ Empreendimentos FCA</h4>
-                <p>Pesquise empreendimentos submetidos à Ficha de Caracterização da Atividade (FCA) por nome, razão social, ID ou número do processo SEI.</p>
-            </div>
+			<div class="feature-card">
+				<h4>🏗️ Empreendimentos FCA e SAIP</h4>
+				<p>Consulte os empreendimentos mantidos pela DBGEO e as áreas cadastradas no SAIP. A ADA é exibida em vermelho e a AID em azul, com busca por nome, ID SAIP, processo SEI, tipo ou município.</p>
+			</div>
             <div class="feature-card">
                 <h4>🧭 GPS acompanha você</h4>
                 <p>O mapa passa a acompanhar automaticamente sua posição em tempo real, ideal para trabalho de campo ou uso no carro. Basta arrastar o mapa para pausar temporariamente.</p>
             </div>
+			<div class="feature-card">
+				<h4>🗺️ ADA e AID consolidadas</h4>
+				<p>Quando disponíveis, a ADA e a AID do mesmo empreendimento são reunidas em um único resultado, com destaque conjunto das geometrias e popup consolidado com processo, áreas, datas e informações patrimoniais.</p>
+			</div>
             <div class="feature-card">
+				<h4>📋 Copiar coordenadas</h4>
+				<p>Clique nas coordenadas exibidas no topo do popup para copiá-las automaticamente no formato latitude, longitude, pronto para colar no Google Maps, QGIS, Waze ou outro aplicativo geoespacial.</p>
+			</div>
+			<div class="feature-card">
                 <h4>🎯 Bússola aprimorada</h4>
                 <p>A seta direcional foi corrigida para funcionar corretamente em qualquer orientação do celular (retrato ou paisagem).</p>
             </div>
@@ -265,6 +273,8 @@
                 <tr><td style="padding:4px 0;">⛏️ Sítios arqueológicos</td><td style="text-align:right;font-weight:600;">~46 mil registros</td></tr>
                 <tr><td style="padding:4px 0;">🏛️ Bens materiais</td><td style="text-align:right;font-weight:600;">~67 mil registros</td></tr>
                 <tr><td style="padding:4px 0;">🏗️ Empreendimentos FCA</td><td style="text-align:right;font-weight:600;">~28 mil registros</td></tr>
+				<tr><td style="padding:4px 0;">🔴 Áreas ADA — SAIP</td><td style="text-align:right;font-weight:600;">2.807 feições</td></tr>
+				<tr><td style="padding:4px 0;">🔵 Áreas AID — SAIP</td><td style="text-align:right;font-weight:600;">2.792 feições</td></tr>
                 <tr><td style="padding:4px 0;">🎭 Bens imateriais (BCR)</td><td style="text-align:right;font-weight:600;">67 registros</td></tr>
 </table>
         </div>
@@ -283,7 +293,7 @@
             <div class="step">
                 <div class="step-content">
                     <strong>Escolha as camadas</strong>
-                    Clique no ícone de camadas (canto superior direito) para selecionar quais informações deseja visualizar no mapa: sítios arqueológicos, bens matériais, empreendimentos, hidrografia e mais.
+                    Clique no ícone de camadas (canto superior direito) para selecionar quais informações deseja visualizar no mapa: sítios arqueológicos, bens materiais e imateriais, empreendimentos FCA, ADA e AID do SAIP, hidrografia e mais.
                 </div>
             </div>
             <div class="step">
@@ -332,6 +342,8 @@
                 <tr><td>Hidrografia</td><td>SICG / GeoServer IPHAN</td><td>Rede hidrográfica associada aos bens culturais</td></tr>
                 <tr><td>Mapa Nimuendaju 2017</td><td>SICG / GeoServer IPHAN</td><td>Mapa etno-histórico atualizado (IPHAN, 2017)</td></tr>
                 <tr><td>Empreendimentos (FCA)</td><td>DBGEO / GeoServer IPHAN</td><td>Empreendimentos com Ficha de Caracterização da Atividade</td></tr>
+				<tr><td>Área Diretamente Afetada (ADA)</td><td>SAIP / GeoServer IPHAN</td><td>Polígonos das áreas diretamente afetadas dos empreendimentos cadastrados no SAIP</td></tr>
+				<tr><td>Área de Influência Direta (AID)</td><td>SAIP / GeoServer IPHAN</td><td>Polígonos das áreas de influência direta dos empreendimentos cadastrados no SAIP</td></tr>
                 <tr><td>Municípios</td><td>SICG / GeoServer IPHAN</td><td>Limites municipais com dados do SICG</td></tr>
             </tbody>
         </table>
@@ -345,7 +357,7 @@
         </ul>
 
         <div class="highlight-box">
-            <strong>Fontes oficiais:</strong> Camadas WMS fornecidas pelo GeoServer do IPHAN (<code>geoserver.iphan.gov.br/geoserver</code>) e bens imateriais provenientes do BCR/IPHAN. Dados topográficos GMRT fornecidos pelo Lamont-Doherty Earth Observatory, Columbia University. O VpGeo utiliza um proxy HTTPS (Cloudflare Workers) para garantir a segurança da conexão.<br><br>
+            <strong>Fontes oficiais:</strong> Camadas WMS fornecidas pelo GeoServer do IPHAN, provenientes do SICG, da DBGEO e do SAIP (<code>geoserver.iphan.gov.br/geoserver</code>), além dos bens imateriais provenientes do BCR/IPHAN. Dados topográficos GMRT fornecidos pelo Lamont-Doherty Earth Observatory, Columbia University. O VpGeo utiliza um proxy HTTPS (Cloudflare Workers) para garantir a segurança da conexão.<br><br>
             <strong>Citação GMRT:</strong> <em>Ryan, W.B.F. et al. (2009), Global Multi-Resolution Topography (GMRT) synthesis, Geochem. Geophys. Geosyst., 10, Q03014, doi:10.1029/2008GC002332.</em>
         </div>
     </div>
@@ -451,7 +463,7 @@
                 <button onclick="copyCitation('cite-apa')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-apa" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, V. P. (2026). <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em> (Versão 1.5) [Software]. Zenodo. https://doi.org/10.5281/zenodo.21135445
+                Gonçalves, V. P. (2026). <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em> (Versão 1.6) [Software]. Zenodo. https://doi.org/10.5281/zenodo.21135445
             </p>
         </div>
 
@@ -462,7 +474,7 @@
                 <button onclick="copyCitation('cite-mla')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-mla" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, Vinicius Paiva. <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em>. Versão 1.5, Zenodo, 2026, doi.org/10.5281/zenodo.21135445.
+                Gonçalves, Vinicius Paiva. <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em>. Versão 1.6, Zenodo, 2026, doi.org/10.5281/zenodo.21135445.
             </p>
         </div>
 
@@ -473,7 +485,7 @@
                 <button onclick="copyCitation('cite-chicago')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-chicago" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, Vinicius Paiva. 2026. "VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro." Versão 1.5. Zenodo. https://doi.org/10.5281/zenodo.21135445.
+                Gonçalves, Vinicius Paiva. 2026. "VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro." Versão 1.6. Zenodo. https://doi.org/10.5281/zenodo.21135445.
             </p>
         </div>
 
@@ -484,7 +496,7 @@
                 <button onclick="copyCitation('cite-abnt')" style="background:#2e7d32;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-abnt" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                GONÇALVES, Vinicius Paiva. <strong>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</strong>. Versão 1.5. Florianópolis: Zenodo, 2026. DOI: 10.5281/zenodo.21135445. Disponível em: https://doi.org/10.5281/zenodo.21135445. Acesso em: [data de acesso].
+                GONÇALVES, Vinicius Paiva. <strong>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</strong>. Versão 1.6. Florianópolis: Zenodo, 2026. DOI: 10.5281/zenodo.21135445. Disponível em: https://doi.org/10.5281/zenodo.21135445. Acesso em: [data de acesso].
             </p>
         </div>
 
@@ -497,7 +509,7 @@
             <pre id="cite-bibtex" style="margin:0;font-size:12px;color:#e0e0e0;font-family:Consolas,'Courier New',monospace;line-height:1.5;white-space:pre-wrap;background:transparent;">@software{goncalves2026vpgeo,
   author    = {Gonçalves, Vinicius Paiva},
   title     = {{VpGeo — Visualizador Geoespacial do Patrim{\^o}nio Cultural Brasileiro}},
-  version   = {1.5},
+  version   = {1.6},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21135445},
@@ -511,23 +523,58 @@
     </div>
 
     <script>
-        function copyCitation(id) {
-            var el = document.getElementById(id);
-            var text = (el.textContent || el.innerText).trim();
-            navigator.clipboard.writeText(text).then(function() {
-                var btn = event.target;
-                var originalText = btn.textContent;
-                var originalBg = btn.style.background;
-                btn.textContent = '✓ Copiado!';
-                btn.style.background = '#4caf50';
-                setTimeout(function() {
-                    btn.textContent = originalText;
-                    btn.style.background = originalBg;
-                }, 1500);
-            }).catch(function() {
+function copyCitation(id) {
+    var el = document.getElementById(id);
+    var text = (el.textContent || el.innerText).trim();
+    var btn = event.target;
+
+    function mostrarSucesso() {
+        var originalText = btn.textContent;
+        var originalBg = btn.style.background;
+
+        btn.textContent = '✓ Copiado!';
+        btn.style.background = '#4caf50';
+
+        setTimeout(function() {
+            btn.textContent = originalText;
+            btn.style.background = originalBg;
+        }, 1500);
+    }
+
+    function copiarAlternativo() {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '0';
+
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        try {
+            var copiado = document.execCommand('copy');
+
+            if (copiado) {
+                mostrarSucesso();
+            } else {
                 alert('Não foi possível copiar. Selecione o texto manualmente.');
-            });
+            }
+        } catch (erro) {
+            alert('Não foi possível copiar. Selecione o texto manualmente.');
         }
+
+        document.body.removeChild(textarea);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+            .then(mostrarSucesso)
+            .catch(copiarAlternativo);
+    } else {
+        copiarAlternativo();
+    }
+}
     </script>
     <div class="section">
         <h2>Perguntas Frequentes</h2>
