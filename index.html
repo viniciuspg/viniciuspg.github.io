@@ -12,7 +12,7 @@
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VpGeo - Visualizador Geoespacial do Patrimônio Cultural Brasileiro</title>
-    <meta name="description" content="VpGeo é um aplicativo web gratuito para visualização e consulta de sítios arqueológicos, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, com dados oficiais do IPHAN.">
+    <meta name="description" content="VpGeo é um aplicativo web gratuito para visualização e consulta de sítios arqueológicos, geossítios, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, com dados do IPHAN e do Serviço Geológico do Brasil.">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2432506794628052" crossorigin="anonymous"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -180,7 +180,7 @@
                 <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21135445.svg" alt="DOI" style="height:24px;vertical-align:middle;">
             </a>
         </div>
-        <p class="desc">Explore sítios arqueológicos, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, em um mapa interativo com dados oficiais do IPHAN.</p>
+        <p class="desc">Explore sítios arqueológicos, geossítios, bens culturais materiais e imateriais e áreas de empreendimentos cadastradas no FCA e no SAIP, em um mapa interativo com dados do IPHAN e do Serviço Geológico do Brasil.</p>
         <a href="https://viniciuspg.github.io/VpGeo/" class="cta">Acessar o VpGeo</a>
         <a href="https://github.com/viniciuspg/VpGeo" class="cta cta-secondary">Ver no GitHub</a>
     </div>
@@ -211,8 +211,8 @@
         <p>O VpGeo oferece um conjunto completo de ferramentas para visualização e consulta geoespacial do patrimônio cultural brasileiro:</p>
         <div class="features-grid">
             <div class="feature-card">
-                <h4>11 Camadas WMS + Bens Imateriais (BCR)</h4>
-                <p>Sítios arqueológicos (pontos e polígonos), bens materiais, bens imateriais, hidrografia, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
+                <h4>11 Camadas WMS + Bens Imateriais (BCR) + Geossítios (GEOSSIT)</h4>
+                <p>Sítios arqueológicos, 702 geossítios do GEOSSIT/SGB, bens materiais e imateriais, hidrografia, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
             </div>
             <div class="feature-card">
                 <h4>5 Mapas Base</h4>
@@ -224,7 +224,7 @@
             </div>
             <div class="feature-card">
                 <h4>Consulta de Feições (GetFeatureInfo)</h4>
-                <p>Clique em qualquer ponto do mapa para consultar informações detalhadas sobre sítios arqueológicos, bens culturais, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
+                <p>Clique nos elementos exibidos no mapa para consultar informações detalhadas sobre sítios arqueológicos, geossítios do GEOSSIT/SGB, bens culturais, empreendimentos FCA e áreas ADA/AID cadastradas no SAIP.</p>
             </div>
             <div class="feature-card">
                 <h4>Legenda Interativa</h4>
@@ -237,14 +237,18 @@
         </div>
     </div>
     <div class="section" style="background:#fef8f8;">
-        <h2>🆕 Últimas atualizações — Versão 1.6</h2>
+        <h2>🆕 Últimas atualizações — Versão 1.7</h2>
         <p>O VpGeo evolui continuamente com base no uso real de arqueólogos, gestores e pesquisadores. Confira as novidades mais recentes:</p>
 
         <div class="features-grid">
             <div class="feature-card">
                 <h4>🔍 Busca unificada</h4>
-                <p>Um único campo para pesquisar sítios arqueológicos, bens materiais, empreendimentos FCA e SAIP, endereços e coordenadas. A busca aceita nome do empreendimento, ID SAIP, processo SEI, tipo, município e código IPHAN com ou sem hífens.</p>
+                <p>Um único campo para pesquisar sítios arqueológicos, geossítios do GEOSSIT, bens materiais, empreendimentos FCA e SAIP, endereços e coordenadas. Os geossítios podem ser localizados por nome, ID, município, UF, classificação, temática, domínio geológico, período geológico ou geoparque.</p>
             </div>
+			<div class="feature-card">
+				<h4>🟡 Geossítios do GEOSSIT</h4>
+				<p>Consulte 702 geossítios cadastrados pelo Serviço Geológico do Brasil, com busca por nome, ID, município, UF, classificação, temática, domínio geológico, período geológico ou geoparque.</p>
+			</div>
 			<div class="feature-card">
 				<h4>🏗️ Empreendimentos FCA e SAIP</h4>
 				<p>Consulte os empreendimentos mantidos pela DBGEO e as áreas cadastradas no SAIP. A ADA é exibida em vermelho e a AID em azul, com busca por nome, ID SAIP, processo SEI, tipo ou município.</p>
@@ -272,6 +276,7 @@
             <table style="width:100%;font-size:14px;color:#333;border-collapse:collapse;margin-top:8px;">
                 <tr><td style="padding:4px 0;">⛏️ Sítios arqueológicos</td><td style="text-align:right;font-weight:600;">~46 mil registros</td></tr>
                 <tr><td style="padding:4px 0;">🏛️ Bens materiais</td><td style="text-align:right;font-weight:600;">~67 mil registros</td></tr>
+				<tr><td style="padding:4px 0;">🟡 Geossítios — GEOSSIT/SGB</td><td style="text-align:right;font-weight:600;">702 registros</td></tr>
                 <tr><td style="padding:4px 0;">🏗️ Empreendimentos FCA</td><td style="text-align:right;font-weight:600;">~28 mil registros</td></tr>
 				<tr><td style="padding:4px 0;">🔴 Áreas ADA — SAIP</td><td style="text-align:right;font-weight:600;">2.807 feições</td></tr>
 				<tr><td style="padding:4px 0;">🔵 Áreas AID — SAIP</td><td style="text-align:right;font-weight:600;">2.792 feições</td></tr>
@@ -293,7 +298,7 @@
             <div class="step">
                 <div class="step-content">
                     <strong>Escolha as camadas</strong>
-                    Clique no ícone de camadas (canto superior direito) para selecionar quais informações deseja visualizar no mapa: sítios arqueológicos, bens materiais e imateriais, empreendimentos FCA, ADA e AID do SAIP, hidrografia e mais.
+                    Clique no ícone de camadas (canto superior direito) para selecionar quais informações deseja visualizar no mapa: sítios arqueológicos, geossítios do GEOSSIT/SGB, bens materiais e imateriais, empreendimentos FCA, ADA e AID do SAIP, hidrografia e mais.
                 </div>
             </div>
             <div class="step">
@@ -341,6 +346,7 @@
                 <tr><td>Pré Setor</td><td>SICG / GeoServer IPHAN</td><td>Setores de planejamento</td></tr>
                 <tr><td>Hidrografia</td><td>SICG / GeoServer IPHAN</td><td>Rede hidrográfica associada aos bens culturais</td></tr>
                 <tr><td>Mapa Nimuendaju 2017</td><td>SICG / GeoServer IPHAN</td><td>Mapa etno-histórico atualizado (IPHAN, 2017)</td></tr>
+				<tr><td>Geossítios</td><td>GEOSSIT / Serviço Geológico do Brasil (SGB)</td><td>702 pontos do inventário nacional de geossítios, com informações de classificação, temática, domínio geológico, avaliação e proteção</td></tr>
                 <tr><td>Empreendimentos (FCA)</td><td>DBGEO / GeoServer IPHAN</td><td>Empreendimentos com Ficha de Caracterização da Atividade</td></tr>
 				<tr><td>Área Diretamente Afetada (ADA)</td><td>SAIP / GeoServer IPHAN</td><td>Polígonos das áreas diretamente afetadas dos empreendimentos cadastrados no SAIP</td></tr>
 				<tr><td>Área de Influência Direta (AID)</td><td>SAIP / GeoServer IPHAN</td><td>Polígonos das áreas de influência direta dos empreendimentos cadastrados no SAIP</td></tr>
@@ -357,7 +363,7 @@
         </ul>
 
         <div class="highlight-box">
-            <strong>Fontes oficiais:</strong> Camadas WMS fornecidas pelo GeoServer do IPHAN, provenientes do SICG, da DBGEO e do SAIP (<code>geoserver.iphan.gov.br/geoserver</code>), além dos bens imateriais provenientes do BCR/IPHAN. Dados topográficos GMRT fornecidos pelo Lamont-Doherty Earth Observatory, Columbia University. O VpGeo utiliza um proxy HTTPS (Cloudflare Workers) para garantir a segurança da conexão.<br><br>
+            <strong>Fontes oficiais:</strong> Camadas WMS fornecidas pelo GeoServer do IPHAN, provenientes do SICG, da DBGEO e do SAIP (<code>geoserver.iphan.gov.br/geoserver</code>); bens imateriais provenientes do BCR/IPHAN; e geossítios provenientes do GEOSSIT, mantido pelo Serviço Geológico do Brasil (SGB). Dados topográficos GMRT fornecidos pelo Lamont-Doherty Earth Observatory, Columbia University. O VpGeo utiliza um proxy HTTPS (Cloudflare Workers) para garantir a segurança da conexão.<br><br>
             <strong>Citação GMRT:</strong> <em>Ryan, W.B.F. et al. (2009), Global Multi-Resolution Topography (GMRT) synthesis, Geochem. Geophys. Geosyst., 10, Q03014, doi:10.1029/2008GC002332.</em>
         </div>
     </div>
@@ -463,7 +469,7 @@
                 <button onclick="copyCitation('cite-apa')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-apa" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, V. P. (2026). <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em> (Versão 1.6) [Software]. Zenodo. https://doi.org/10.5281/zenodo.21135445
+                Gonçalves, V. P. (2026). <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em> (Versão 1.7) [Software]. Zenodo. https://doi.org/10.5281/zenodo.21135445
             </p>
         </div>
 
@@ -474,7 +480,7 @@
                 <button onclick="copyCitation('cite-mla')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-mla" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, Vinicius Paiva. <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em>. Versão 1.6, Zenodo, 2026, doi.org/10.5281/zenodo.21135445.
+                Gonçalves, Vinicius Paiva. <em>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</em>. Versão 1.7, Zenodo, 2026, doi.org/10.5281/zenodo.21135445.
             </p>
         </div>
 
@@ -485,7 +491,7 @@
                 <button onclick="copyCitation('cite-chicago')" style="background:#5a0a0a;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-chicago" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                Gonçalves, Vinicius Paiva. 2026. "VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro." Versão 1.6. Zenodo. https://doi.org/10.5281/zenodo.21135445.
+                Gonçalves, Vinicius Paiva. 2026. "VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro." Versão 1.7. Zenodo. https://doi.org/10.5281/zenodo.21135445.
             </p>
         </div>
 
@@ -496,7 +502,7 @@
                 <button onclick="copyCitation('cite-abnt')" style="background:#2e7d32;color:white;border:none;padding:5px 14px;font-size:11px;border-radius:4px;cursor:pointer;font-weight:600;">Copiar</button>
             </div>
             <p id="cite-abnt" style="margin:0;font-size:13px;color:#333;font-family:Georgia,serif;line-height:1.6;">
-                GONÇALVES, Vinicius Paiva. <strong>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</strong>. Versão 1.6. Florianópolis: Zenodo, 2026. DOI: 10.5281/zenodo.21135445. Disponível em: https://doi.org/10.5281/zenodo.21135445. Acesso em: [data de acesso].
+                GONÇALVES, Vinicius Paiva. <strong>VpGeo — Visualizador Geoespacial do Patrimônio Cultural Brasileiro</strong>. Versão 1.7. Florianópolis: Zenodo, 2026. DOI: 10.5281/zenodo.21135445. Disponível em: https://doi.org/10.5281/zenodo.21135445. Acesso em: [data de acesso].
             </p>
         </div>
 
@@ -509,7 +515,7 @@
             <pre id="cite-bibtex" style="margin:0;font-size:12px;color:#e0e0e0;font-family:Consolas,'Courier New',monospace;line-height:1.5;white-space:pre-wrap;background:transparent;">@software{goncalves2026vpgeo,
   author    = {Gonçalves, Vinicius Paiva},
   title     = {{VpGeo — Visualizador Geoespacial do Patrim{\^o}nio Cultural Brasileiro}},
-  version   = {1.6},
+  version   = {1.7},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21135445},
